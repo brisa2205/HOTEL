@@ -21,37 +21,42 @@ protected:
   string Ubicacion;
   string Horario;
   float Precio;
-  float Nopersonas 
+  float Nopersonas;
 
 public:
     ServicioHotel();
     ServicioHotel(string,string,string,string,float,float);
 //   usamos las palabra virtual nos idic funcion de polimorfismo
-    virtual void buscarServicio();
+    virtual void buscarServicio()=0 ;
+
 
 };
 
 // metodos de la clase hotel
 ServicioHotel::ServicioHotel(){
-    string NombreServicio;
-  string NombreHotel;
-  string Ubicacion;
-  string Horario;
-  float Precio;
-  float Nopersonas 
 
-   NombreServicio= "sin especificar";
+  NombreServicio = "sin especificar";
    NombreHotel="no especificado";
     Ubicacion="no especificado";
     Horario="no especificado";
     Precio=0;
     Nopersonas=0;
 }
-void ServicioHotel::buscarservicio()
-{
+ServicioHotel::ServicioHotel(string _NombreServicio,string _NombreHotel,string _Ubicacion,string _Horario,float _Precio,float _Nopersonas)  {
+  NombreServicio = _NombreServicio; 
+  NombreHotel = _NombreHotel ;
+  Ubicacion= _Ubicacion;
+  Horario= _Horario;
+  Precio= _Precio;
+  Nopersonas= _Nopersonas;
+
+ }
+
+void ServicioHotel::buscarservicio(){
+
 cout<<"Nombre hotel"<<NombreHotel<< endl;
 cout<<"Nombre Servicio"<<NombreServicio<<endl;
-cout<<"Ubicación"<<Ubicacion<<endl;
+cout<<"Ubicacion"<<Ubicacion<<endl;
 cout<<"Horario"<<Horario<<endl;
 cout<<"Precio"<<Precio;
 cout<<"no. de personas "<<Nopersonas;
@@ -110,7 +115,7 @@ private:
   string Musica;
   float sillas;
   string comida;
-  string Decoración;
+  string Decoraciï¿½n;
 
 public:
   Evento();
@@ -139,11 +144,11 @@ Evento::Evento(float _Mesas, string _Musica, float _Sillas, string _comida, stri
 }
 void Evento::buscarSerivioHotel(){
      ServicioHotel::buscarServicioHotel()
-      cout <<"¿cuantas mesas?"<<Mesas<<endl;
-      cout<<"¿desea musica?"<<Musica<<endl:
-      cout<<"¿cuantas sillas desea?"<<Sillas<<endl;
+      cout <<"ï¿½cuantas mesas?"<<Mesas<<endl;
+      cout<<"ï¿½desea musica?"<<Musica<<endl:
+      cout<<"ï¿½cuantas sillas desea?"<<Sillas<<endl;
       cout"que comidad desea"<<Comida<<endl;
-      cout<<"¿Deses decoración?"<<Decoracion<<endl;
+      cout<<"ï¿½Deses decoraciï¿½n?"<<Decoracion<<endl;
 }
 
 //  Declarar clase alojamiento
@@ -165,15 +170,15 @@ Alojamiento::Alojamiento(){
 }
 
 Alojamiento::Alojamiento(string _NumeroHabitacion, string _TipoDeHabitacion){
-    Numerohabitacion= _NumeroHabitación;
+    Numerohabitacion= _NumeroHabitaciï¿½n;
     TipoDeHabitacion= _TipoDeHabitacion;
 
 }
 void Alojamiento::buscarServicio(){
      ServicioHotel::buscarServicio()
 
-      cout <<"¿numerro de habitación?"<<Numerohabitacion<<endl;
-      cout<<"tipo de habitación:"<<TipoDeHabitacion<<endl:
+      cout <<"ï¿½numerro de habitaciï¿½n?"<<Numerohabitacion<<endl;
+      cout<<"tipo de habitaciï¿½n:"<<TipoDeHabitacion<<endl:
       
 }
 #endif //Serviciohotel

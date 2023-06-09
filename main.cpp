@@ -1,11 +1,23 @@
-#include <iostream>   
+#include <iostream>  
+
+#include <string>
+
 //bibliotecas
 #include "Hotel.h" 
 
 #include "Serviciohotel.h"
 
+using namespace std;
+
 
 int main(){
+
+    Cliente cliente1;
+    cliente1.generarRecepcion();
+    cliente1.elegirservicio();
+    cliente1.pagarservicio();
+    cliente1.generarticket();
+    return 0;
 // Aplicamos polimorfismo en el main
 ServicoHotel * cuarto[2];
 

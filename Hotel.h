@@ -1,9 +1,14 @@
 
-#ifndef Hotel_H_
-#Define Hotel_H_
+#if !defined( Hotel_H_) 
+
+#define Hotel_H_
 #include <iostream>
 #include <string>
-#include <stream>
+
+
+
+
+
 
 using namespace std;
 
@@ -26,12 +31,12 @@ public:
 Hotel::Hotel(){
     
     Nombre ="sin nombre";
-    Ubicacion="sin ubicación";
+    Ubicacion="sin ubicacion";
     Ticket ticket1;
     ticket = ticket1;
 }
 // Generamos constructore vacios
-Hotel::Hotel(string _Nombre, string _ubicación,Ticket_ticket){
+Hotel::Hotel(string _Nombre, string _Ubicacion,Ticket_ticket){
     Nombre = _Nombre;
     Ubicacion = _Ubicacion;
     ticket =_ticket;
@@ -40,7 +45,7 @@ Hotel::Hotel(string _Nombre, string _ubicación,Ticket_ticket){
 void Hotel::muestraTicket(){
     cout << endl << "-----------------------Datos del Ticket ---------------------------------------" << endl;
     cout << "                      Nombre: " << Nombre << endl;
-    cout << "                      Ubicación: " << Ubicacion << endl;
+    cout << "                      Ubicacion: " << Ubicacion << endl;
     ticket.muestraTicket();
 }
 
@@ -56,5 +61,8 @@ public:
     Ticket(Cliente);
 
 
+
 };
+
+
 #endif //Hotel _H_
