@@ -27,6 +27,7 @@ public:
     ServicioHotel();
     ServicioHotel(string,string,string,string,float,float);
 //   usamos las palabra virtual nos idic funcion de polimorfismo
+ // el metodo lo ponemos en 0 para que se convierta en una clase abstracta
     virtual void buscarServicio()=0 ;
 
 
