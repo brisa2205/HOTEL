@@ -2,38 +2,40 @@
 #define CLIENTE_H_
 
 #include <string>
-
 #include <iostream>
-
 #include <sstream>
 
-#include "Hotel.h"
+using namespace std;
 
-// La clase Cliente y la clase ticket forman una agregaci�n
+
+
+// La clase Cliente y la clase ticket forman una agregacion
 class Cliente{
 private:
-    string nombre;
+
+    string Nombre;
     string Apellido;
+
 public:
     Cliente();
-    Cliente(string,string);
-    generarRecepcion();
-    elegirservicio();
-    pagarservicio();
-    generarticket()
+    Cliente(string, string);
+  void  generarRecepcion();
+  void  elegirservicio();
+  void pagarservicio();
+  void generarticket();
 
    
 };
 //metodos clase Cliente 
 Cliente::Cliente(){
     
-    Nombre="sin nombre";
-    Apellido="sin Apellidos";
+    Nombre ="sin nombre";
+    Apellido ="sin Apellidos";
 }
-Cliente::Cliente(string_Nombre,string_Apellido){
+Cliente::Cliente(string _Nombre,string _Apellido){
 
-  Nombre=_Nombre;
-  Apellido=_Apellido;
+  Nombre= _Nombre;
+  Apellido= _Apellido;
 }
  void Cliente::generarRecepcion(){
      cout<<"Bienvenido a la recepcion"<<endl;
@@ -45,17 +47,14 @@ Cliente::Cliente(string_Nombre,string_Apellido){
      cout<<"1.-Alojamiento"<<endl;
      cout<<"2.-Restaurante"<<endl;
      cout<<"3.-Evento"<<endl;
+     
+}
 
-
- }
-    
-   
-
-    void Cliente::elegirservicio(){
+ void Cliente:: elegirservicio(){
         int opcion;
         cin>>opcion;
         switch(opcion){
-            case 1:
+            case 1:{
                 cout<<"¿Cuantas noches desea alojarse?"<<endl;
                 cin>>opcion;
                 cout<<"¿Que tipo de habitacion desea?"<<endl;
@@ -64,7 +63,7 @@ Cliente::Cliente(string_Nombre,string_Apellido){
                 cout<<"3.-Triple"<<endl;
                 cout<<"4.-Suite"<<endl;
                 cin>>opcion;
-                switch(opcion){
+                switch(opcion) {
                     case 1:
                         cout<<"El costo de su habitacion es de $1000 por noche"<<endl;
                         cout<<"El costo total es de $"<<opcion*1000<<endl;
@@ -83,7 +82,8 @@ Cliente::Cliente(string_Nombre,string_Apellido){
                         break;
                 }
                 break;
-            case 2:
+            }
+            case 2:{
                 cout<<"¿Cuantas personas son?"<<endl;
                 cin>>opcion;
                 cout<<"¿Que tipo de comida desea?"<<endl;
@@ -106,7 +106,8 @@ Cliente::Cliente(string_Nombre,string_Apellido){
                         break;
                 }
                 break;
-            case 3:
+            }
+            case 3:{
                 cout<<"¿Cuantas personas son?"<<endl;
                 cin>>opcion;
                 cout<<"¿Que tipo de evento desea?"<<endl;
@@ -129,8 +130,15 @@ Cliente::Cliente(string_Nombre,string_Apellido){
                         break;
                 }
                 break;
-        }
-void Cliente::pagarservicio(){
+        }    
+        break;
+    }
+}
+void Cliente:: pagarservicio() {
+    int opcion;
+        cin>>opcion;
+        switch(opcion){
+    
     cout<<"¿Con que desea pagar?"<<endl;
     cout<<"1.-Efectivo"<<endl;
     cout<<"2.-Tarjeta"<<endl;
@@ -151,13 +159,15 @@ void Cliente::pagarservicio(){
             cout<<"Su pago se ha realizado con exito"<<endl;
             break;
     }
+    break;
 }
-void Cliente::generarticket(){
+void Cliente::generarticket() {
+    int opcion;
     cout<<"¿Desea generar ticket?"<<endl;
     cout<<"1.-Si"<<endl;
     cout<<"2.-No"<<endl;
-    cin>>opcion;
-    switch(opcion){
+    cin>> opcion;
+    switch(opcion) {
         case 1:
             cout<<"Ticket generado con exito"<<endl;
             break;
@@ -165,10 +175,9 @@ void Cliente::generarticket(){
             cout<<"Gracias por su visita"<<endl;
             break;
     }
-}
-
     
 }
 
-     
-#endif //claseHotel
+
+ #endif /* CLIENTE_H_ */    
+
