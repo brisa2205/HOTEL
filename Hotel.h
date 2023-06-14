@@ -1,68 +1,53 @@
+#ifndef HOTEL_H_
+#define HOTEL_H_
 
-#if !defined( Hotel_H_) 
-
-#define Hotel_H_
 #include <iostream>
 #include <string>
-
-
-
-
-
+#include "CLIENTE.h"
+#include "Serviciohotel.h"
 
 using namespace std;
 
-//Declarar la clase Hotel
-class Hotel{
+
+
+
+
+
+class Hotel {
 private:
-    string Nombre;
-    string Ubicacion;
-    Ticket ticket;
+    string nombre;
+    string ubicacion;
+    vector<Cliente*> clientes;
 
 public:
     Hotel();
-    Hotel(string,string,Ticket);
-    void muestraCliente();
-    void muestraTicket();
-     
-    
-};
-//declaramos metodos clase HOTEL
-Hotel::Hotel(){
-    
-    Nombre ="sin nombre";
-    Ubicacion="sin ubicacion";
-    Ticket ticket1;
-    ticket = ticket1;
-}
-// Generamos constructore vacios
-Hotel::Hotel(string _Nombre, string _Ubicacion,Ticket_ticket){
-    Nombre = _Nombre;
-    Ubicacion = _Ubicacion;
-    ticket =_ticket;
-}
-
-void Hotel::muestraTicket(){
-    cout << endl << "-----------------------Datos del Ticket ---------------------------------------" << endl;
-    cout << "                      Nombre: " << Nombre << endl;
-    cout << "                      Ubicacion: " << Ubicacion << endl;
-    ticket.muestraTicket();
-}
-
-// declarar clase Ticket
-
-class Ticket{
-private:
-   cliente Cliente;
-   
-
-public:
-    Ticket();
-    Ticket(Cliente);
-
-
-
+    Hotel(const string& _nombre, const string& _ubicacion);
+    void mostrarResumen();
+    void agregarCliente(Cliente* cliente);
 };
 
+Hotel::Hotel() {
+    nombre = "sin nombre";
+    ubicacion = "sin ubicacion";
+}
 
-#endif //Hotel _H_
+Hotel::Hotel(const string& _nombre, const string& _ubicacion) {
+    nombre = _nombre;
+    ubicacion = _ubicacion;
+}
+void Hotel::mostrarResumen() {
+    cout << "Nombre: " << nombre << endl;
+    cout << "Ubicacion: " << ubicacion << endl;
+    cout << "Número de clientes: " << clientes.size() << endl;
+}
+
+void Hotel::agregarCliente(Cliente* cliente) {
+    clientes.push_back(cliente);
+}
+
+
+
+
+
+
+#endif

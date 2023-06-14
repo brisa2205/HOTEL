@@ -1,35 +1,80 @@
-#include <iostream>  
 
+#include <iostream>
 #include <string>
 
-//bibliotecas
-#include "Hotel.h" 
-
+#include "Hotel.h"
 #include "Serviciohotel.h"
+#include "CLIENTE.h"
 
-using namespace std;
+int main() {
+    string nombreHotel, ubicacionHotel;
+    cout << "Ingrese el nombre del hotel: ";
+    getline(cin, nombreHotel);
+    cout << "Ingrese la ubicación del hotel: ";
+    getline(cin, ubicacionHotel);
 
+    Hotel hotel(nombreHotel, ubicacionHotel);
 
-int main(){
+    int noServicio;
+    string nombreCliente, apellidoCliente, correoCliente, metodoPagoCliente;
+    cout << "Ingrese el número de servicio del cliente: ";
+    cin >> noServicio;
+    cin.ignore();
+    cout << "Ingrese el nombre del cliente: ";
+    getline(cin, nombreCliente);
+    cout << "Ingrese el apellido del cliente: ";
+    getline(cin, apellidoCliente);
+    cout << "Ingrese el correo del cliente: ";
+    getline(cin, correoCliente);
+    cout << "Ingrese el método de pago del cliente: ";
+    getline(cin, metodoPagoCliente);
 
-    Cliente cliente1;
-    cliente1.generarRecepcion();
-    cliente1.elegirservicio();
-    cliente1.pagarservicio();
-    cliente1.generarticket();
+    Cliente cliente(noServicio, nombreCliente, apellidoCliente, correoCliente, metodoPagoCliente);
+
+    int opcion;
+    string nombreServicio, recinto, horario;
+    float precio;
+    int numPersonas;
+
+    cout << "Elija el tipo de servicio:" << endl;
+    cout << "1. Evento" << endl;
+    cout << "2. Alojamiento" << endl;
+    cout << "3. Restaurante" << endl;
+    cout << "Ingrese su opción: ";
+    cin >> opcion;
+
+    cout << "Ingrese el nombre del servicio: ";
+    cin.ignore();
+    getline(cin, nombreServicio);
+    cout << "Ingrese el recinto del servicio: ";
+    getline(cin, recinto);
+    cout << "Ingrese el horario del servicio: ";
+    getline(cin, horario);
+    cout << "Ingrese el precio del servicio: ";
+    cin >> precio;
+    cout << "Ingrese el número de personas: ";
+    cin >> numPersonas;
+
+    if (opcion == 1) {
+        cliente.elegirServicio(new Evento(0, "si", 0, "pan", "si", nombreServicio, recinto, horario, precio, numPersonas));
+    } else if (opcion == 2) {
+        cliente.elegirServicio(new Alojamiento("cinco", "grande", nombreServicio, recinto, horario, precio, numPersonas));
+    } else if (opcion == 3) {
+        cliente.elegirServicio(new Restaurante("vegana", "pescado", "manzan", "lsl", "sbd", "3:15",200 , 5));
+    } else {
+        cout << "Opción inválida." << endl;
+        return 0;
+    }
+
+    cout << endl;
+    hotel.agregarCliente(&cliente);
+    hotel.mostrarResumen();
+    cout << endl;
+    cliente.mostrarInfo();
+    cout << endl;
+    cliente.pagarServicio();
+
     return 0;
-// Aplicamos polimorfismo en el main
-ServicoHotel * cuarto[2];
-
-cuarto[0]=new Restaurante("Enchiladas", "pollo", 3)
-cuarto[0]->buscarServicio();
-cout<<"\n";
-cuarto[1]=new Evento(5, "si", 20, "mole con pollo", "si")
-cuarto[1]->buscarServico();
-cout<<"\n";
-cuarto[2]= new Alojamiento("5 cuartos ", "4 personas")
-cout<<"\n";
 }
-
 
 
