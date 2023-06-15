@@ -4,10 +4,9 @@
  * Brisa Itzel Reyes Castro
  * A01710395
  * 15/06/2023
- * versio : 4
  * Esta clase defina objeto de tipo Cliente que contiene todos las metodos
- * los cuales se basan en mostrar, aprtar servicios además dee mostrar servicio 
- *  apartado con el fin de que el cliente interactua y visualice la información
+ * los cuales se basan en mostrar, aprtar servicios ademÃ¡s dee mostrar servicio 
+ *  apartado con el fin de que el cliente interactua y visualice la informaciÃ³n
  */
 
 
@@ -79,15 +78,15 @@ void Cliente::apartarServicio(int opcion) {
             apartados[apartadoActual++] = servicios[opcion - 1];
             cout << "Servicio apartado exitosamente." << endl;
         } else {
-            cout << "Opción inválida." << endl;
+            cout << "OpciÃ³n invÃ¡lida." << endl;
         }
     } else {
-        cout << "No es posible apartar más servicios. Límite alcanzado." << endl;
+        cout << "No es posible apartar mÃ¡s servicios. LÃ­mite alcanzado." << endl;
     }
 }
 	/**
 	* usamos un ciclo for teniendo en cuenta que si apartamos 
-	*en esta sección nos mostrara lo que apartamos anteriormente.
+	*en esta secciÃ³n nos mostrara lo que apartamos anteriormente.
 	*/
 	
 void Cliente::mostrarApartados(string tipo) {
