@@ -1,10 +1,10 @@
 # HOTEL/TC1030
 -Contexto
 
-Este proyecto es creado con el fin de poder llevar un control acerca sobre los servicos que ofrece el hotel. En el cual se ofrecen diferente servicios como alojamiento, resturante y eventos, de manera que el cliente puede ver los servicios disponibles, pueda apartar el sericio y al final le muestre el servicio que aparto  es decir un resumen.
+Este proyecto es creado con el fin de poder llevar un control acerca sobre los servicios que ofrece el hotel. En el cual se ofrecen diferente servicios como alojamiento, resturante y eventos, de manera que el cliente puede ver los servicios disponibles, pueda apartar el sericio y al final le muestre el servicio que aparto  es decir un resumen.
 
 -FUNCIONAMIENTO DEL PROGRAMA
-El progrsama pregunta datos del usuario, una vez registrados el porgrama manda un menu con las respectivas opciones de lo servicios dispoinibles , estos ya fueron creados por lo cual solo los imprimira, posterioremnte a esto elegirás que opcion deseas del servicio, este se va a apartar y por ultimo te mostrar lo  apartado.
+El programa pregunta datos del usuario, una vez registrados el porgrama manda un menu con las respectivas opciones de lo servicios disponibles , estos ya fueron creados por lo cual solo los imprimirá, posterioremnte a esto, elegirás que opcion deseas del servicio, este se va a apartar y por ultimo te mostrará lo  apartado.
 
 
 
@@ -16,9 +16,9 @@ posteriormente no desplegará un menu, y te dirá que ingreses una opcion, esto 
 -RETROALIMENTACIONES 
 
 RETROALIMENTACION
-Faltan consideraciones/ casos que con el que el proyecto no funcionaría. Hay métodos sin la especificación de visibilidad (+,-..) en ServicioHotel. La relación de composición entre ticket y servicio es al revés (el servicio genera un ticket). El cliente adquiere el ticket al pedir un servicio,y pide el servicio por medio del recepcionista. La relación de herencia no se ve claramente.			
+Faltan consideraciones  casos que con el que el proyecto no funcionaría. Hay métodos sin la especificación de visibilidad (+,-..) en ServicioHotel. La relación de composición entre ticket y servicio es al revés (el servicio genera un ticket). El cliente adquiere el ticket al pedir un servicio,y pide el servicio por medio del recepcionista. La relación de herencia no se ve claramente.			
 ARREGLO
-De acuerdo a la sugerencia, se hizo una modificación de clases por cuestiones de logica y de implemntación en código, ahorar todos los metodos tienen visibilidad, las relaciones que podemos apreciar es de herencia teniendo como cclase padre a servicioHotel e hijas a restaurante, evento y alojamiento , asimismo la clase cliente tiene una agregación de servicioHotel. Podemos apreciar que la clase hotel ya no se encuentra vigente, por lo que en código tampoco.
+De acuerdo a la sugerencia, se hizo una modificación de clases por cuestiones de logica y de implemntación en código, ahorar todos los metodos tienen visibilidad, las relaciones que podemos apreciar es de herencia teniendo como clase padre a servicioHotel e hijas a restaurante, evento y alojamiento , asimismo la clase cliente tiene una agregación de servicioHotel. Podemos apreciar que la clase hotel ya no se encuentra vigente, por lo que en código tampoco.
 RETROALIMENTACIÓN
 Favor de poner tu nombre y matrícula en tu repositorio. Agregar modificadores de acceso en UML. No hay sobreescritura, solo sobrecarga. Arreglar la flecha de herencia en el UML.			
 
@@ -30,6 +30,7 @@ ARREGLO
 El codigo fue elaborado nuevamente y compila de manera correcta.
 RETROALIMENTACION 4
 No compila. Sin embargo, estaba revisando tu clase abstracta y veo que, aunque sea virtual, sigues definiendo el comportamiento del método en la clase Hotel.	
+
 ARREGLO 
 
 El programa ya compila de mnaera correcta además tambien se soluciono el virtual.
