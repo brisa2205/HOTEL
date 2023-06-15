@@ -4,7 +4,7 @@
  * Brisa Itzel Reyes Castro
  * A01710395
  * 15/06/2023
- * versio : 4
+ 
  * Esta clase defina objeto de tipo ServivioHotel qla cual es la clase padre ya
  *que le hereda atributos a sus hijas con el fin de usar polimorfismo y 
  *tener clase abstracta.
@@ -52,7 +52,7 @@ public:
 
     void mostrarServicio() {
         cout << "Nombre del servicio: " << nombreServicio << endl;
-        cout << "Ubicación: " << ubicacion << endl;
+        cout << "UbicaciÃ³n: " << ubicacion << endl;
         cout << "Horario: " << horario << endl;
         cout << "Precio: " << precio << endl;
         cout<<"no de personas"<<noPersonas<<endl;
@@ -79,7 +79,7 @@ public:
 
     void mostrarServicio() {
         cout << "Nombre del servicio: " << nombreServicio << endl;
-        cout << "Ubicación: " << ubicacion << endl;
+        cout << "UbicaciÃ³n: " << ubicacion << endl;
         cout << "Horario: " << horario << endl;
         cout << "Precio: " << precio << endl;
          cout<<"no de personas"<<noPersonas<<endl;
@@ -106,7 +106,7 @@ public:
 
     void mostrarServicio() {
         cout << "Nombre del servicio: " << nombreServicio << endl;
-        cout << "Ubicación: " << ubicacion << endl;
+        cout << "UbicaciÃ³n: " << ubicacion << endl;
         cout << "Horario: " << horario << endl;
         cout << "Precio: " << precio << endl;
          cout<<"no de personas"<<noPersonas<<endl;
