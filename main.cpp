@@ -1,80 +1,86 @@
+/**
+ *
+ * Proyecto Hotel clase Cliente
+ * Brisa Itzel Reyes Castro
+ * A01710395
+ * 15/06/2023
+ * versio : 4
+ * Este es un programa donde el usuario ingresa sus datos, 
+ *posteriormente se le desploiega un menu sobre algunos 
+ *servicios y  ella puede apartar su servicio predeterminado 
+ *y posteriormente el sistema le muestra lo apartado.
+ */
+
 
 #include <iostream>
 #include <string>
-
-#include "Hotel.h"
-#include "Serviciohotel.h"
 #include "CLIENTE.h"
+#include "Serviciohotel.h"
+
+using namespace std;
+
+
 
 int main() {
-    string nombreHotel, ubicacionHotel;
-    cout << "Ingrese el nombre del hotel: ";
-    getline(cin, nombreHotel);
-    cout << "Ingrese la ubicación del hotel: ";
-    getline(cin, ubicacionHotel);
-
-    Hotel hotel(nombreHotel, ubicacionHotel);
-
     int noServicio;
-    string nombreCliente, apellidoCliente, correoCliente, metodoPagoCliente;
-    cout << "Ingrese el número de servicio del cliente: ";
+    string nombre;
+    string apellido;
+    string correo;
+    string metodoPago;
+
+    cout << "Ingrese el número de servicio: ";
     cin >> noServicio;
-    cin.ignore();
     cout << "Ingrese el nombre del cliente: ";
-    getline(cin, nombreCliente);
+    cin >> nombre;
     cout << "Ingrese el apellido del cliente: ";
-    getline(cin, apellidoCliente);
+    cin >> apellido;
     cout << "Ingrese el correo del cliente: ";
-    getline(cin, correoCliente);
+    cin >> correo;
     cout << "Ingrese el método de pago del cliente: ";
-    getline(cin, metodoPagoCliente);
+    cin >> metodoPago;
 
-    Cliente cliente(noServicio, nombreCliente, apellidoCliente, correoCliente, metodoPagoCliente);
+    // Crear instancias de servicios
+    Restaurante* restaurante = new Restaurante("Restaurante la Vaca", "antea", "08:00 - 22:00", 50.0, 100,"enchiladas","jugo de naranja","ensalada de manzana");
+    Evento* evento = new Evento("Evento XY años", "Ubicación salon villagrand", "10:00 - 18:00", 20.0, 200,20,"banda",200,"mole con pollo","tematica de mariposas");
+    Alojamiento* alojamiento = new Alojamiento("holiday inn","5 de febrero", "20:00", 100 ,4, 304,"matrimonial")
+    
 
+    // Crear instancia del cliente
+    
+
+    // Menú de interacción con el cliente
     int opcion;
-    string nombreServicio, recinto, horario;
-    float precio;
-    int numPersonas;
-
-    cout << "Elija el tipo de servicio:" << endl;
-    cout << "1. Evento" << endl;
-    cout << "2. Alojamiento" << endl;
-    cout << "3. Restaurante" << endl;
-    cout << "Ingrese su opción: ";
-    cin >> opcion;
-
-    cout << "Ingrese el nombre del servicio: ";
-    cin.ignore();
-    getline(cin, nombreServicio);
-    cout << "Ingrese el recinto del servicio: ";
-    getline(cin, recinto);
-    cout << "Ingrese el horario del servicio: ";
-    getline(cin, horario);
-    cout << "Ingrese el precio del servicio: ";
-    cin >> precio;
-    cout << "Ingrese el número de personas: ";
-    cin >> numPersonas;
-
-    if (opcion == 1) {
-        cliente.elegirServicio(new Evento(0, "si", 0, "pan", "si", nombreServicio, recinto, horario, precio, numPersonas));
-    } else if (opcion == 2) {
-        cliente.elegirServicio(new Alojamiento("cinco", "grande", nombreServicio, recinto, horario, precio, numPersonas));
-    } else if (opcion == 3) {
-        cliente.elegirServicio(new Restaurante("vegana", "pescado", "manzan", "lsl", "sbd", "3:15",200 , 5));
-    } else {
-        cout << "Opción inválida." << endl;
-        return 0;
+    //ciclo while
+    while (true) {
+        cout << endl;
+        cout << "---- MENÚ ----" << endl;
+        cout << "1. Mostrar servicios disponibles" << endl;
+        cout << "2. Apartar servicio" << endl;
+        cout << "3. Mostrar apartados por tipo" << endl;
+        cout << "4. Salir" << endl;
+        cout << "Ingrese una opción: ";
+        cin >> opcion;
+        cout << endl;
+//condicionales
+        if (opcion == 1) {
+            cliente.mostrarServiciosDisponibles();
+        } else if (opcion == 2) {
+            int servicio;
+            cout << "Ingrese el número de servicio a apartar: ";
+            cin >> servicio;
+            cliente.apartarServicio(servicio);
+        } else if (opcion == 3) {
+            string tipo;
+            cout << "Ingrese el tipo de servicio a mostrar (Restaurante, Evento, Alojamiento): ";
+            cin >> tipo;
+            cliente.mostrarApartados(tipo);
+        } else if (opcion == 4) {
+            break;
+        } else {
+            cout << "Opción inválida. Intente nuevamente." << endl;
+        }
     }
 
-    cout << endl;
-    hotel.agregarCliente(&cliente);
-    hotel.mostrarResumen();
-    cout << endl;
-    cliente.mostrarInfo();
-    cout << endl;
-    cliente.pagarServicio();
-
+   
     return 0;
-}
-
-
+	}

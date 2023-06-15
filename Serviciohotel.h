@@ -1,155 +1,120 @@
 /*
- * Brisa
- * Proyecto Hotel
- * 
+ *
+ * Proyecto Hotel clase Cliente
+ * Brisa Itzel Reyes Castro
+ * A01710395
+ * 15/06/2023
+ * versio : 4
+ * Esta clase defina objeto de tipo ServivioHotel qla cual es la clase padre ya
+ *que le hereda atributos a sus hijas con el fin de usar polimorfismo y 
+ *tener clase abstracta.
  */
 
 #ifndef SERVICIO_HOTEL_H_
 #define SERVICIO_HOTEL_H_
-#include <iostream>
-#include <string>
-using namespace std;
-
 
 #include <iostream>
-#include <string>
+
+#include <sstream>
 
 using namespace std;
 
+//declaramos clase 
 class ServicioHotel {
-private:
+protected:
     string nombreServicio;
-    string recinto;
+    string ubicacion;
     string horario;
-    float precio;
+    double precio;
     int noPersonas;
-
+//declaramos metodos
 public:
-    ServicioHotel();
-    ServicioHotel(string, string, string, float, int);
-    virtual void buscarServicio() = 0;
+    ServicioHotel(string _nombreServicio, string _ubicacion, string _horario, double _precio, int _noPersonas)
+        : nombreServicio(_nombreServicio), ubicacion(_ubicacion), horario(_horario), precio(_precio), noPersonas(_noPersonas) {}
+
+//metodo abstracto
+    virtual void mostrarServicio() = 0;
 };
 
-ServicioHotel::ServicioHotel() {
-    nombreServicio = "sin especificar";
-    recinto = "no especificado";
-    horario = "no especificado";
-    precio = 0;
-    noPersonas = 0;
-}
-
-ServicioHotel::ServicioHotel(string _nombreServicio, string _recinto, string _horario, float _precio, int _noPersonas) {
-    nombreServicio = _nombreServicio;
-    recinto = _recinto;
-    horario = _horario;
-    precio = _precio;
-    noPersonas = _noPersonas;
-}
-
-void ServicioHotel::buscarServicio() {
-    cout << "Nombre Servicio: " << nombreServicio << endl;
-    cout << "recinto: " << recinto << endl;
-    cout << "Horario: " << horario << endl;
-    cout << "Precio: " << precio << endl;
-    cout << "No. de personas: " << noPersonas << endl;
-}
+//declaramos clase Restaurante
+//Aplicamos herencia 
 
 class Restaurante : public ServicioHotel {
 private:
     string tipoComida;
-    string preferenciasComida;
-    string Ensalada;
-
+    string bebida;
+    string ensalada;
+    
+//metodos restaurante
 public:
-    Restaurante();
-    Restaurante(string, string, string, string, string, string, float, int);
-    void buscarServicio();
+    Restaurante(string _nombreServicio, string _ubicacion, string _horario, double _precio,int _noPersonas, string _tipoComida, string _bebida, string _ensalada)
+        : ServicioHotel(_nombreServicio, _ubicacion, _horario, _precio, _noPersonas), tipoComida(_tipoComida), bebida(_bebida), ensalada(_ensalada) {}
+
+    void mostrarServicio() {
+        cout << "Nombre del servicio: " << nombreServicio << endl;
+        cout << "Ubicación: " << ubicacion << endl;
+        cout << "Horario: " << horario << endl;
+        cout << "Precio: " << precio << endl;
+        cout<<"no de personas"<<noPersonas<<endl;
+        cout << "tipo de comida: " << tipoComida<< endl;
+         cout << "tipo de bebida: " << bebida << endl;
+        cout << "tipo de ensalada" << ensalada << endl;
+    
+        cout << endl;
+    }
 };
-
-Restaurante::Restaurante() : ServicioHotel() {
-    tipoComida = "ninguno";
-    preferenciasComida = "ninguno";
-    Ensalada = "ninguno";
-}
-
-Restaurante::Restaurante(string _tipoComida, string _preferenciasComida, string _Ensalada, string _nombreServicio, string _recinto, string _horario, float _precio, int _Nopersonas) : ServicioHotel(_nombreServicio, _recinto, _horario, _precio, _Nopersonas) {
-    tipoComida = _tipoComida;
-    preferenciasComida = _preferenciasComida;
-    Ensalada = _Ensalada;
-}
-
-void Restaurante::buscarServicio() {
-    ServicioHotel::buscarServicio();
-    cout << "Tipo de comida: " << tipoComida << endl;
-    cout << "Preferencia de comida: " << preferenciasComida << endl;
-    cout << "Cuantas ensaladas desea: " << Ensalada << endl;
-}
 
 class Evento : public ServicioHotel {
 private:
-    float Mesas;
-    string Musica;
+    float mesas;
+    string musica;
     float sillas;
     string comida;
-    string Decoracion;
-
+    string decoracion;
+    
+//metodos publicos
 public:
-    Evento();
-    Evento(float, string, float, string, string, string, string, string, float, int);
-    void buscarServicio();
+    Evento(string _nombreServicio, string _ubicacion, string _horario, double _precio,int _noPersonas, int _mesas,string _musica,float _sillas, string _comida, string _decoracion)
+        : ServicioHotel(_nombreServicio, _ubicacion, _horario, _precio, _noPersonas),mesas(_mesas),musica (_musica),sillas(_sillas),comida(_comida),decoracion(_decoracion){}
+
+    void mostrarServicio() {
+        cout << "Nombre del servicio: " << nombreServicio << endl;
+        cout << "Ubicación: " << ubicacion << endl;
+        cout << "Horario: " << horario << endl;
+        cout << "Precio: " << precio << endl;
+         cout<<"no de personas"<<noPersonas<<endl;
+        cout << "cuantas mesas: " << mesas << endl;
+         cout << "tipo de musica:"<< musica << endl;
+        cout << "cuantas sillas " << sillas << endl;
+        cout << "desea comida: " << comida << endl;
+        cout << "tipo de decoracion " << decoracion << endl;
+        
+        
+        cout << endl;
+    }
 };
 
-Evento::Evento() : ServicioHotel() {
-    Mesas = 0;
-    Musica = "ninguna";
-    sillas = 0;
-    comida = "ninguna";
-    Decoracion = "ninguna";
-}
-
-Evento::Evento(float _Mesas, string _Musica, float _sillas, string _comida, string _Decoracion, string _nombreServicio, string _recinto, string _horario, float _precio, int _Nopersonas) : ServicioHotel(_nombreServicio, _recinto, _horario, _precio, _Nopersonas) {
-    Mesas = _Mesas;
-    Musica = _Musica;
-    sillas = _sillas;
-    comida = _comida;
-    Decoracion = _Decoracion;
-}
-
-void Evento::buscarServicio() {
-    ServicioHotel::buscarServicio();
-    cout << "Cuantas mesas: " << Mesas << endl;
-    cout << "Desea musica: " << Musica << endl;
-    cout << "Cuantas sillas desea: " << sillas << endl;
-    cout << "Que comida desea: " << comida << endl;
-    cout << "Desea decoracion: " << Decoracion << endl;
-}
-
+//declaramos clase 
 class Alojamiento : public ServicioHotel {
 private:
-    string numerohabitacion;
-    string tipohabitacion;
-
+    float numeroDeHabitacion;
+    string tipoDeHabitacion;
+//metodos de alojamiento
 public:
-    Alojamiento();
-    Alojamiento(string, string, string, string, string, float, int);
-    void buscarServicio();
+    Alojamiento(string _nombreServicio, string _ubicacion, string _horario, double _precio,int _noPersonas, float _numeroDeHabitacion, string  _tipoDeHabitacion)
+        : ServicioHotel(_nombreServicio, _ubicacion, _horario, _precio, _noPersonas), numeroDeHabitacion(_numeroDeHabitacion), tipoDeHabitacion(_tipoDeHabitacion) {}
+
+    void mostrarServicio() {
+        cout << "Nombre del servicio: " << nombreServicio << endl;
+        cout << "Ubicación: " << ubicacion << endl;
+        cout << "Horario: " << horario << endl;
+        cout << "Precio: " << precio << endl;
+         cout<<"no de personas"<<noPersonas<<endl;
+        cout << "numero de habitacion:: " << numeroDeHabitacion << endl;
+        cout << "tipo de habitacion " << tipoDeHabitacion << endl;
+        cout << endl;
+    }
 };
-
-Alojamiento::Alojamiento() : ServicioHotel() {
-    numerohabitacion = "no especificado";
-    tipohabitacion = "no especificado";
-}
-
-Alojamiento::Alojamiento(string _numerohabitacion, string _tipohabitacion, string _nombreServicio, string _recinto, string _horario, float _precio, int _Nopersonas) : ServicioHotel(_nombreServicio, _recinto, _horario, _precio, _Nopersonas) {
-    numerohabitacion = _numerohabitacion;
-    tipohabitacion = _tipohabitacion;
-}
-
-void Alojamiento::buscarServicio() {
-    ServicioHotel::buscarServicio();
-    cout << "Numero de habitacion: " << numerohabitacion << endl;
-    cout << "Tipo de habitacion: " << tipohabitacion << endl;
-}
 
 
 #endif
