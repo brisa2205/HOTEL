@@ -1,7 +1,7 @@
 # HOTEL/TC1030
 -Contexto
 
-Este proyecto es creado con el fin de poder llevar un control acerca sobre los servicios que ofrece el hotel. En el cual se ofrecen diferente servicios como alojamiento, resturante y eventos, de manera que el cliente puede ver los servicios disponibles, pueda apartar el sericio y al final le muestre el servicio que aparto  es decir un resumen.
+Este proyecto es creado con el fin de poder llevar un control acerca sobre los servicios que ofrece el hotel. En el cual se ofrecen diferente servicios como alojamiento, resturante y eventos, de manera que el cliente puede ver los servicios disponibles, pueda apartar el servicio y al final le muestre el servicio que aparto  es decir un resumen.
 
 -FUNCIONAMIENTO DEL PROGRAMA
 El programa pregunta datos del usuario, una vez registrados el porgrama manda un menu con las respectivas opciones de lo servicios disponibles , estos ya fueron creados por lo cual solo los imprimirá, posterioremnte a esto, elegirás que opcion deseas del servicio, este se va a apartar y por ultimo te mostrará lo  apartado.
