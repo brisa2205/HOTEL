@@ -4,12 +4,12 @@
 Este proyecto es creado con el fin de poder llevar un control acerca sobre los servicios que ofrece el hotel. En el cual se ofrecen diferente servicios como alojamiento, resturante y eventos, de manera que el cliente puede ver los servicios disponibles, pueda apartar el servicio y al final le muestre el servicio que aparto  es decir un resumen.
 
 -FUNCIONAMIENTO DEL PROGRAMA
-El programa pregunta datos del usuario, una vez registrados el porgrama manda un menu con las respectivas opciones de lo servicios disponibles , estos ya fueron creados por lo cual solo los imprimirá, posterioremnte a esto, elegirás que opcion deseas del servicio, este se va a apartar y por ultimo te mostrará lo  apartado.
+El programa pregunta datos del usuario, una vez registrados el programa manda un menu con las respectivas opciones de lo servicios disponibles , estos ya fueron creados por lo cual solo los imprimirá, posterioremnte a esto, elegirás que opcion deseas del servicio, este se va a apartar y por ultimo te mostrará lo  apartado.
 
 
 
 -INSTRUCCIONES
-El progrma pedirá datos como el no. de servicio, nombre del cliente, apellido, correo y metodo de pago. teniendo esto en cuenta puedes ingresar datos libres no hay restricción.
+El programa pedirá datos como el no. de servicio, nombre del cliente, apellido, correo y metodo de pago. teniendo esto en cuenta puedes ingresar datos libres no hay restricción.
 posteriormente no desplegará un menu, y te dirá que ingreses una opcion, esto solo funciona con numeros enteros desde el 1 hasta el 4, dependiendo de lo que elijas es lo que desplegará el sistema. para que tenga la funcion que necesito recomiendo picar las opciones en orden, en caso de que lo hagas asi el sistema funcionará de acuerdo a la descripcion dada.
 
 
@@ -41,6 +41,6 @@ EVIDENCIA:
 Se implementa de manera correcta el concepto de Polimorfismo
 Se implementa de manera correcta el concepto de Clases Abstractas
 DEMOSTRACIÓN
-EN el serviciohotel.h linea 36 se genera un virtual lo cual nos dice que ese metodo funcionara a las clases de herencia, con la diferencia de que cada un actuará diferente asi mismo el igualar la función void a 0; esa clase se hace abstracta. 
+EN el serviciohotel.h linea 36 se genera un virtual lo cual nos dice que ese metodo funcionará a las clases de herencia, con la diferencia de que cada un actuará diferente asi mismo el igualar la función void a 0; esa clase se hace abstracta. 
 
 
